@@ -7,8 +7,8 @@ module.exports = merge(config, {
         minimizer: [
             new UglifyJSPlugin({
                 uglifyOptions: {
+                    warnings: false,
                     compress: {
-                        warnings: false,
                         drop_console: true
                     },
                     output: {

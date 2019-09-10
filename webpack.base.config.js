@@ -1,9 +1,8 @@
-const webpack = require('webpack');
 const path = require('path');
 
 // 這邊使用 HtmlWebpackPlugin，將 bundle 好的 <script> 插入到 body。${__dirname} 為 ES6 語法對應到 __dirname
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     // 檔案起始點從 entry 進入，因為是陣列所以也可以是多個檔案
@@ -45,11 +44,9 @@ module.exports = {
     },
     // plugins 放置所使用的外掛
     plugins: [
-        new webpack.optimize.ModuleConcatenationPlugin(),
-        new CleanWebpackPlugin([
-            `${__dirname}/dist`
-        ], {
-            allowExternal: true
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: [`${__dirname}/dist`],
+            verbose: true,
         }),
         new HtmlWebpackPlugin({
             template: `${__dirname}/index.html`,

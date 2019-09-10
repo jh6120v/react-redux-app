@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import logo from '../../../assets/images/react-redux.png';
+import styled, { keyframes } from 'styled-components';
+import { respondTo } from '../../../styles/_mixin';
 
 const Container = styled.div`
   display: flex;
@@ -15,11 +15,25 @@ const Container = styled.div`
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=1 );
 `;
 
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
 const Logo = styled.div`
-  width: 100%;
+  width: calc((100% - 100px) / 2);
   height: 200px;
-  background: url('${logo}') no-repeat center center;
+  background: url(${(props) => props.img}) no-repeat center;
   background-size: contain;
+  animation: ${rotate} 3s linear infinite;
+  ${respondTo.sm`
+    width: 220px;
+  `}
 `;
 
 const Title = styled.h1`
