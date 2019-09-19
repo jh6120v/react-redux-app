@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import 'jest-styled-components';
 import styled from 'styled-components';
 import { respondTo } from '../../src/styles/_mixin';
@@ -21,7 +21,8 @@ const Button = styled.button`
 
 describe('test mixin function', () => {
     it('test response', () => {
-        const tree = renderer.create(<Button />).toJSON();
+        const { container } = render(<Button />);
+        const tree = container.firstChild;
 
         expect(tree).toHaveStyleRule('color', 'red', {
             media: '(min-width:480px)'

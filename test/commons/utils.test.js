@@ -1,4 +1,7 @@
-import { createActionCreator } from '../../src/commons/utils';
+import { lazy } from 'react';
+import { render, waitForElement } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+import { createActionCreator, waitingRouteComponent } from '../../src/commons/utils';
 
 describe('test utils', () => {
     it('test createActionCreator type', () => {
@@ -20,7 +23,26 @@ describe('test utils', () => {
         expect(JSON.stringify(test())).toEqual(JSON.stringify(fakeTestCreator()));
     });
 
-    it('rendered lazily', async () => {
+    it('rendered lazily fallback', async () => {
+        const LazyComponent = lazy(() => import('../lazy-component'));
 
+        const { container } = render(
+            waitingRouteComponent(LazyComponent)()
+        );
+
+        const lazyElement = await waitForElement(() => container);
+
+        expect(lazyElement).toMatchSnapshot();
+    });
+
+    it('rendered lazily', async () => {
+        const LazyComponent = lazy(() => import('../lazy-component'));
+
+        const { getByText } = render(
+            waitingRouteComponent(LazyComponent)()
+        );
+
+        const lazyElement = await waitForElement(() => getByText(/i am lazy/i));
+        expect(lazyElement).toBeInTheDocument();
     });
 });
