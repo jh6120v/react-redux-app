@@ -16,6 +16,7 @@
     "@babel/preset-react": "^7.0.0",
     "@hot-loader/react-dom": "^16.9.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-react-remove-properties": "^0.3.0",
     "clean-webpack-plugin": "^3.0.0",
     "connected-react-router": "^6.5.2",
     "file-loader": "^4.2.0",
@@ -42,21 +43,20 @@
     "webpack-merge": "^4.2.2"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.1.0",
+    "@testing-library/react": "^9.1.4",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "enzyme-to-json": "^3.4.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.6.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "jest-single-file-coverage": "^1.0.2",
     "jest-styled-components": "^6.3.3",
-    "path": "^0.12.7",
-    "react-test-renderer": "^16.9.0"
+    "path": "^0.12.7"
   },
   "scripts": {
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build --historyApiFallback --config webpack.dev.config.js",
@@ -68,6 +68,7 @@
   },
   "jest": {
     "setupFiles": [
+      "@testing-library/react/dont-cleanup-after-each",
       "./test/setup.js"
     ],
     "moduleFileExtensions": [
@@ -80,12 +81,11 @@
     "transform": {
       "^.+\\.js$": "babel-jest"
     },
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
     "collectCoverageFrom": [
-      "src/styles/*.{js,jsx}",
-      "src/commons/*.{js,jsx}",
+      "src/styles/*.js",
+      "src/commons/*.js",
+      "src/containers/*/*.js",
+      "src/routes/home/*/*.js",
       "!src/assets/*.*"
     ]
   }
