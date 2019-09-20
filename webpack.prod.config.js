@@ -19,5 +19,8 @@ module.exports = merge(config, {
             })
         ]
     },
+    performance: {
+        hints: false
+    },
     mode: 'production'
 });
