@@ -11,9 +11,9 @@ module.exports = {
     ],
     // output 是放入產生出來的結果的相關參數
     output: {
-        path: `${__dirname}/dist`,
+        path: `${__dirname}/docs`,
         filename: 'assets/js/bundle.[hash].js',
-        publicPath: '/'
+        // publicPath: '/'
     },
     module: {
         // loaders 則是放欲使用的 loaders，在這邊是使用 babel-loader 將所有 .js（這邊用到正則式）
@@ -45,7 +45,7 @@ module.exports = {
     // plugins 放置所使用的外掛
     plugins: [
         new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: [`${__dirname}/dist`],
+            cleanOnceBeforeBuildPatterns: [`${__dirname}/docs`],
             verbose: true,
         }),
         new HtmlWebpackPlugin({
