@@ -1,10 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test reset style. reset style snap shot 1`] = `
-Array [
-  "
-  ",
-  "
+"
+  
 /* http://meyerweb.com/eric/tools/css/reset/
    v4.0 | 20180602
    License: none (public domain)
@@ -57,8 +55,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-",
-  "
+
   * {
     box-sizing: border-box;
   }
@@ -74,6 +71,5 @@ table {
     border-color: transparent;
     outline : 0;
   }
-",
-]
+"
 `;

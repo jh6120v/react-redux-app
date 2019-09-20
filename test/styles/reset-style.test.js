@@ -1,9 +1,10 @@
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import ResetStyle from '../../src/styles/reset-style';
+import 'jest-styled-components';
 
 describe('test reset style.', () => {
     it('reset style snap shot', () => {
-        const tree = renderer.create(ResetStyle.globalStyle.rules).toJSON();
-        expect(tree).toMatchSnapshot();
+        const { container } = render(ResetStyle.globalStyle.rules);
+        expect(container.textContent).toMatchSnapshot();
     });
 });

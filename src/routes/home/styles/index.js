@@ -43,14 +43,47 @@ const Title = styled.h1`
   padding: 30px 0;
 `;
 
-const SubTitle = styled(Title)`
-  font-size: 25px;
-  padding: 20px 0;
+const backAndForth = keyframes`
+  0% {
+    left: 0;
+  }
+  50% {
+    left: calc(100% - 2rem);
+    background-color: #8660C2;
+  }
+  100% {
+    left: 0;
+  }
+`;
+
+const LogoLink = styled.div`
+  width: 80px;
+  margin: 0 10px;
+  position: relative;
+  &:before {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    background-color: #62DAFB;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: calc(50% - 0.5rem);
+    transition: all 1s ease-in-out;
+    animation: ${backAndForth} 1.7s infinite;
+  }
+  ${respondTo.xs`
+    &:before {
+      width: 2rem;
+      height: 2rem;
+      top: calc(50% - 1rem);
+    }
+  `}
 `;
 
 export {
     Container,
     Logo,
     Title,
-    SubTitle
+    LogoLink
 };
