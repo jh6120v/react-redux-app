@@ -1,6 +1,9 @@
 # react-redux-app
 The basic architecture of a react + redux
 
+# Demo
+ - https://jh6120v.github.io/react-redux-app/
+
 # What can I find here?
 
 - webpack
@@ -33,6 +36,3 @@ The basic architecture of a react + redux
 - base setting: webpack.base.config.js
 - develop: webpack.dev.config.js
 - production: webpack.prod.config.js
-
-# Demo
- - https://jh6120v.github.io/react-redux-app/
