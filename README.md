@@ -1,3 +1,5 @@
+![image](https://github.com/jh6120v/react-redux-app/blob/master/cover.png)
+
 # react-redux-app
 The basic architecture of a react + redux
 
