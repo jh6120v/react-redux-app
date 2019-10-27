@@ -35,7 +35,7 @@ module.exports = {
                         options: {
                             outputPath: './assets/images',
                             name: 'i.[hash].[ext]',
-                            publicPath: 'assets/images'
+                            publicPath: '/assets/images'
                         }
                     }
                 ]
