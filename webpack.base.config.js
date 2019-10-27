@@ -12,8 +12,7 @@ module.exports = {
     // output 是放入產生出來的結果的相關參數
     output: {
         path: `${__dirname}/docs`,
-        filename: 'assets/js/bundle.[hash].js',
-        publicPath: '/'
+        filename: 'assets/js/bundle.[hash].js'
     },
     module: {
         // loaders 則是放欲使用的 loaders，在這邊是使用 babel-loader 將所有 .js（這邊用到正則式）
@@ -35,7 +34,7 @@ module.exports = {
                         options: {
                             outputPath: './assets/images',
                             name: 'i.[hash].[ext]',
-                            publicPath: '/assets/images'
+                            publicPath: 'assets/images'
                         }
                     }
                 ]
