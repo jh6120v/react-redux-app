@@ -4,7 +4,7 @@
 The basic architecture of a react + redux
 
 # Demo
- - https://jh6120v.github.io/react-redux-app/
+ - https://react-redux-app-b08c9.web.app/
 
 # What can I find here?
 
