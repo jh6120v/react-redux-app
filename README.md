@@ -5,6 +5,7 @@ The basic architecture of a react + redux
 
 # Demo
  - https://react-redux-app-b08c9.web.app/
+ - https://react-redux-app.dailyofjames.com/
 
 # What can I find here?
 
@@ -26,7 +27,7 @@ The basic architecture of a react + redux
 
 # Scripts
 
-- develop(open webpack-dev-server): ```npm run dev```
+- develop(open webpack-dev-server): ```npm run start```
 - production: ```npm run prod```
 - analyze: ```npm run analyze```
 - show analyze report: ```npm run report```
