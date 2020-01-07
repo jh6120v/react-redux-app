@@ -5,7 +5,6 @@ The basic architecture of a react + redux
 
 # Demo
  - https://react-redux-app-b08c9.web.app/
- - https://react-redux-app.dailyofjames.com/
 
 # What can I find here?
 
